@@ -8,16 +8,6 @@
 #define Sin(th) sin(PI/180*(th))
 
 
-#define BLACK 0, 0, 0
-#define GREEN 0, 1, 0
-#define BLUE 0, 0, 1
-#define YELLOW 1, 1, 0
-#define CYAN 0, 1, 1
-#define MAGENTA 1, 0, 1
-#define WHITE 1, 1, 1
-#define RED 1, 0, 0
-
-
 //make a global variable -- for tracking the anglular position of camera
 double cameraAngle;			//in radian
 double cameraAngleDelta;
@@ -67,41 +57,20 @@ void display() {
 	}
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	/********************
-	/ set-up camera here
-	********************/
-	//load the correct matrix -- MODEL-VIEW matrix
+	
 	glMatrixMode(GL_MODELVIEW);
 
 	//initialize the matrix
 	glLoadIdentity();
 
-	//now give three info
-	//1. where is the camera (viewer)?
-	//2. where is the camera is looking?
-	//3. Which direction is the camera's UP direction?
-
-	//instead of CONSTANT information, we will define a circular path.
-//	gluLookAt(-30,-30,50,	0,0,0,	0,0,1);
+	
 
 	gluLookAt(cameraRadius * cos(cameraAngle) + moveX, cameraRadius * sin(cameraAngle) + moveY, cameraHeight, 0 + moveX, 0 + moveY, 0, 0, 0, 1);
-	//NOTE: the camera still CONSTANTLY looks at the center
-	// cameraAngle is in RADIAN, since you are using inside COS and SIN
+	
 
 
 	//again select MODEL-VIEW
 	glMatrixMode(GL_MODELVIEW);
-
-
-	/****************************
-	/ Add your objects from here
-	****************************/
-	//add objects
-	//rotate this rectangle around the Z axis
-
-
-
-
 
 //	Green Field
 	glColor3f(0 + field, .8 - field, 0.3);
@@ -247,7 +216,7 @@ void display() {
 	}
 
 
-	// for lamp post left side
+	
 
 	for (int i = 10000; i >= -10000; i -= 500)
 	{
@@ -273,28 +242,14 @@ void display() {
 				glVertex3f(Cos(k + 5), Sin(k + 5), 0);
 			}
 			glEnd();
-			/*
-			glColor3f(1, 1, .9 * light);
-			glTranslatef(0, 0, 100);
-			gluCylinder(obj, 3, 5, 10, 10, 8);
-
-			glColor3f(.25, .25, .25);
-			glTranslatef(0, 0, 10);
-			gluCylinder(obj, 5, 3, 3, 10, 8);
-
-			glTranslatef(0, 0, 1.3);
-			glutSolidSphere(3, 50, 20);
-
-			glTranslatef(0, 0, 3);
-			glutSolidSphere(1, 50, 20);
-			*/
+			
 
 
 		}glPopMatrix();
 
 	}
 
-	//for lamp post right side	
+	
 	for (int ii = 10000; ii >= -10000; ii -= 500)
 	{
 
@@ -326,67 +281,11 @@ void display() {
 
 	}
 
-	//modeling car	
-
-	// for car	
+		
 	glPushMatrix(); {
 		glTranslatef(0 + moveX, 0 + moveY, 0);
 		glScalef(1, .8, 1);
-		//	glColor3f(.97, .97, .97);	//white
-		//    glColor3f(1, 0, 0);
-		//	glColor3f(.9, .9, .9);	
-		/*int a = car_color % 21;
-
-		if (a == 0) {
-
-			glColor3f(.97, .97, .97);	//white
-
-		}		//    glColor3f(1, 0, 0);
-		else if (a == 1)	glColor3f(.9, .9, .9);
-
-		else if (a == 2) 	glColor3f(.1, .2, .7);	//blue
-
-		else if (a == 3)	glColor3f(.5, .2, .2);	//chocolate
-
-		else if (a == 4)	glColor3f(.35, .35, .35);	//black
-
-
-		else if (a == 5)	glColor3f(.2, .45, .2);	//green
-
-
-		else if (a == 6)	glColor3f(.329412, .329412, .329412);	//grey
-
-		else if (a == 7)	glColor3f(.372549, .623529, .623529);	//cadet blue
-
-		else if (a == 8)	glColor3f(.6, .196078, .8);	//dark orchid
-
-		else if (a == 9)	glColor3f(.858824, .858824, .239216);	//golden yellow
-
-		else if (a == 10)	glColor3f(0.498039, 0, 1);	//purple
-
-		else if (a == 11)	glColor3f(0.184314, .184314, .309804);	//midnight blue
-
-		else if (a == 12)	glColor3f(0.137255, .137255, .556863);	//NavyBlue
-
-		else if (a == 13)	glColor3f(0.90, .91, .98);	//Silver
-
-		else if (a == 14)	glColor3f(0.30, .30, 1);	//Neon pink
-
-		else if (a == 15)	glColor3f(0.36, .20, .09);	//choc
-
-		else if (a == 16)	glColor3f(0.55, .09, .09);	//Scarlet
-
-		else if (a == 17)	glColor3f(0.13, .37, .31);	//Dusty Green
-
-		else if (a == 18)	glColor3f(0.42, .26, .15);	//browny
-
-		else if (a == 19)	glColor3f(0.85, .85, .95);	//Quartz
-
-
-		else if (a == 20)	glColor3f(0.85, .85, .10);	//light gold
-
-		else if (a == 21)	glColor3f(0.63, .26, .86);	//Purple	
-		*/
+		
 		if (car_color == 1)
 		{
 			glColor3f(1.0, 0.0, 0.0);
@@ -394,6 +293,22 @@ void display() {
 		else if (car_color == 2)
 		{
 			glColor3f(0.0, 0.0, 1.0);
+		}
+		else if (car_color == 3) 
+		{
+			glColor3f(0.0, 1.0, 0.0); 
+		}
+		else if (car_color == 4) 
+		{
+			glColor3f(0.0, 0.0, 0.0);
+		}
+		else if (car_color == 5) 
+		{
+			glColor3f(1.0, 1.0, 1.0);
+		}
+		else if (car_color == 6)
+		{
+			glColor3f(0.85, 0.55, 0.10);
 		}
 
 
@@ -522,15 +437,7 @@ void display() {
 
 
 
-		//headlight
-		/*		glBegin(GL_QUADS);{
-				glVertex3f(-72,-37,12.5);
-				glVertex3f(-79.5,-37,12.5);
-				glVertex3f(-79.5,-37,18);
-				glVertex3f(0,-37,18);
-			}glEnd();
-		*/
-		// front front left
+		
 		glBegin(GL_QUAD_STRIP); {
 			glVertex3f(-75, -37, 8);
 			glVertex3f(-82, -37, 8);
@@ -2976,75 +2883,7 @@ void display() {
 
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-	//some gridlines along the field
-//	int i;
-
-/*	//WILL draw grid IF the "canDrawGrid" is true:
-
-	if(canDrawGrid == true){
-		glColor3f(0.3, 0.3, 0.3);	//grey
-		glBegin(GL_LINES);{
-			for(int i=-10;i<=10;i++){
-
-				if(i==0)
-					continue;	//SKIP the MAIN axes
-
-				//lines parallel to Y-axis
-				glVertex3f(i*10, -100, 0);
-				glVertex3f(i*10,  100, 0);
-
-				//lines parallel to X-axis
-				glVertex3f(-100, i*10, 0);
-				glVertex3f( 100, i*10, 0);
-			}
-		}glEnd();
-	}
-
-	// draw the two AXES
-	glColor3f(1, 1, 1);	//100% white
-	glBegin(GL_LINES);{
-		//Y axis +ve
-
-		glVertex3f(0, 0, 0);	// intentionally extended to -150 to 150, no big deal
-		glVertex3f(0,  150, 0);
-//Y axis -ve
-		glColor3f(0, 1, 0);
-		glVertex3f(0, -150, 0);	// intentionally extended to -150 to 150, no big deal
-		glVertex3f(0,  0, 0);
-
-
-		glColor3f(1, 1, 0);
-//X axis -ve
-		glVertex3f(-150, 0, 0);
-
-		glVertex3f( 0, 0, 0);
-
-		glColor3f(1, 0, 0);
-//X axis +ve
-	glVertex3f(0, 0, 0);
-
-		glVertex3f(150, 0, 0);
-	}glEnd();
-
-*/
 	glutSwapBuffers();
-
-
-	//glColor3f(1,1,1);
-	//DrawCircle(0,0,20,100);
-
 }
 
 void animate() {
@@ -3282,7 +3121,7 @@ void init() {
 
 
 	
-	glClearColor(BLACK, 0);
+	glClearColor(0, 0, 0, 0);          
 	
 	glMatrixMode(GL_PROJECTION);
 
@@ -3308,6 +3147,7 @@ void color_choose(int ch)
 		break;
 	case 5:car_color = 5;
 		break;
+	case 6:car_color = 6;
 	default:
 		break;
 	}
@@ -3342,6 +3182,10 @@ int main(int argc, char** argv) {
 	glutCreateMenu(color_choose);
 	glutAddMenuEntry("Red", 1);
 	glutAddMenuEntry("Blue", 2);
+	glutAddMenuEntry("Green", 3);
+	glutAddMenuEntry("Black", 4);
+	glutAddMenuEntry("White", 5);
+	glutAddMenuEntry("Gold", 6);
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
 	
 	glutCreateMenu(sky_choose);
@@ -3357,6 +3201,5 @@ int main(int argc, char** argv) {
 	glutSpecialFunc(specialKeyListener);
 
 	glutMainLoop();		
-
 	return 0;
 }

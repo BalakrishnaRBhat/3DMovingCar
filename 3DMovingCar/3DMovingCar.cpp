@@ -8,8 +8,8 @@
 #define Sin(th) sin(PI/180*(th))
 
 
-//make a global variable -- for tracking the anglular position of camera
-double cameraAngle;			//in radian
+
+double cameraAngle;			
 double cameraAngleDelta;
 
 double cameraHeight;
@@ -370,9 +370,7 @@ void display() {
 			{
 				glVertex3f(47 * cos(ai), -37, 40 * sin(ai));
 			}
-			//		glVertex3f(60,-37,15);
-			//		glVertex3f(47,-37,15);
-			//		glVertex3f(47,-37,8);
+			
 
 
 		}glEnd();
@@ -384,9 +382,7 @@ void display() {
 			{
 				glVertex3f(47 * cos(ai), 37, 40 * sin(ai));
 			}
-			//		glVertex3f(60,-37,15);
-			//		glVertex3f(47,-37,15);
-			//		glVertex3f(47,-37,8);
+			
 		}glEnd();
 
 		// front left
@@ -1114,50 +1110,7 @@ void display() {
 
 
 
-		/*
-	//glass back
-
-	glColor3f(0.1,0.1,0.1);
-		glBegin(GL_QUADS);{
-			glVertex3f(21,35,37.05);
-			glVertex3f(21,-35,37.05);
-			glVertex3f(45,-35,28.05);
-			glVertex3f(45,35,28.05);
-
-		}glEnd();
-
-		glBegin(GL_QUADS);{
-			glVertex3f(48,35,28.1);
-			glVertex3f(48,-35,28.1);
-			glVertex3f(48,-35,27.9);
-			glVertex3f(48,35,27.9);
-
-		}glEnd();
-
-
-		glBegin(GL_QUADS);{
-			glVertex3f(48,35,27.9);
-			glVertex3f(48,-35,27.9);
-			glVertex3f(48,-35,27.9);
-			glVertex3f(48,35,27.9);
-
-		}glEnd();
-
-
-	//glass front
-
-		glBegin(GL_QUADS);{
-			glVertex3f(-21,34,37);
-			glVertex3f(-21,-34,37);
-			glVertex3f(-45,-34,24);
-			glVertex3f(-45,34,24);
-
-		}glEnd();
-
-	*/
-	//fine tunes
-	//front
-	//glColor3f(0.97,0.97,0.97);	
+		
 		glBegin(GL_TRIANGLE_STRIP); {
 			glVertex3f(-21, 34, 37);
 
@@ -1347,24 +1300,7 @@ void display() {
 			glVertex3f(46, 35, 28.2);
 
 		}glEnd();
-		/*
-			glBegin(GL_QUADS);{
-				glVertex3f(48,35,28.1);
-				glVertex3f(48,-35,28.1);
-				glVertex3f(48,-35,27.9);
-				glVertex3f(48,35,27.9);
-
-			}glEnd();
-
-
-			glBegin(GL_QUADS);{
-				glVertex3f(48,35,27.9);
-				glVertex3f(48,-35,27.9);
-				glVertex3f(48,-35,27.9);
-				glVertex3f(48,35,27.9);
-
-			}glEnd();
-		*/
+		
 
 		//glass front
 
@@ -1375,80 +1311,7 @@ void display() {
 			glVertex3f(-45, 33, 26.1);
 
 		}glEnd();
-		//glass side
-		/*
-			glBegin(GL_QUADS);{
-				glVertex3f(-45,-37.5,21);
-				glVertex3f(-45,-37.5,23);
-				glVertex3f(0,-37.5,23);
-				glVertex3f(0,-37.5,37);
-
-			}glEnd();
-
-				glBegin(GL_QUADS);{
-				glVertex3f(-45,37.5,21);
-				glVertex3f(-45,37.5,23);
-				glVertex3f(0,37.5,23);
-				glVertex3f(0,37.5,37);
-
-			}glEnd();
-
-				glBegin(GL_QUADS);{
-				glVertex3f(40,-37.5,25);
-				glVertex3f(40,-37.5,21);
-				glVertex3f(3,-37.5,23);
-				glVertex3f(3,-37.5,37);
-
-			}glEnd();
-
-				glBegin(GL_QUADS);{
-				glVertex3f(40,37.5,25);
-				glVertex3f(40,37.5,21);
-				glVertex3f(3,37.5,23);
-				glVertex3f(3,37.5,37);
-
-			}glEnd();
-		*/
-		/*
-
-			glBegin(GL_TRIANGLE_FAN);{
-				glVertex3f(10,-37.5,24);
-		//		for(float ai=0.0;ai<=45;ai+=.1)
-		//		{
-		//			glVertex3f(40*cos(ai),40,40*sin(ai));
-		//		}
-
-				//		glVertex3f(60,-37,15);
-				glVertex3f(-44,-37.5,24);
-				glVertex3f(-43,-37.5,25);
-				glVertex3f(-41,-37.5,26);
-				glVertex3f(-39,-37.5,27);
-				glVertex3f(-35,-37.5,29);
-				glVertex3f(-31,-37.5,31);
-		//		glVertex3f(-30,-39,31.5);
-		//		glVertex3f(-29,-39,31.75);
-				glVertex3f(-28,-37.5,32);
-		//		glVertex3f(-27,-39,32.25);
-				glVertex3f(-26.5,-37.5,33);
-				glVertex3f(-25,-37.5,33.25);
-
-
-
-
-
-
-
-
-				glVertex3f(-20,-37.5,35.5);
-				glVertex3f(-19,-37.5,35.75);
-				glVertex3f(-18,-37.5,35.85);
-				glVertex3f(-17,-37.5,36);
-				glVertex3f(-16,-37.5,37);
-				glVertex3f(-10,-37.5,38);
-				glVertex3f(0,-37.5,38.5);
-				glVertex3f(10,-37.5,38);
-			}glEnd();
-		*/
+		
 		// glass side
 
 		// door 
@@ -1527,25 +1390,13 @@ void display() {
 
 
 		glBegin(GL_LINE_STRIP); {
-			/*		glVertex3f(86,-36.5,22);
-					glVertex3f(85,-35.5,20);
-					glVertex3f(85,34,15);
-					glVertex3f(85,-33,12);
-					glVertex3f(86,33,12);
-					glVertex3f(47,-35,28);
-					glVertex3f(47,35,28);
-					glVertex3f(83,33,26);
-
-					glVertex3f(83,-33,26);
-					glVertex3f(47,-35,28);
-			*/
+			
 			glVertex3f(83, -28, 23);
 			glVertex3f(84, -26, 12);
 			glVertex3f(84, 26, 12);
 			glVertex3f(83, 28, 23);
 			glVertex3f(83, -28, 23);
-			//		glVertex3f(84,33.5,22);
-			//		glVertex3f(84,-33.5,22);
+			
 
 		}glEnd();
 
@@ -1560,20 +1411,7 @@ void display() {
 
 
 		}glEnd();
-		/*
-				glBegin(GL_LINE_STRIP);{
-
-
-				glVertex3f(83,-18,19);
-				glVertex3f(84,-19,14);
-				glVertex3f(84,19,14);
-				glVertex3f(83,18,19);
-				glVertex3f(83,-18,19);
-
-
-			  }glEnd();
-
-		*/
+		
 
 		glBegin(GL_LINE_STRIP); {
 			glVertex3f(-83, -37, 5.5);
@@ -1583,8 +1421,7 @@ void display() {
 			glVertex3f(-83, -1, 5.5);
 			glVertex3f(-83, -37, 5.5);
 
-			//		glVertex3f(-82.5,37,4.5);
-			//		glVertex3f(-81,37,12.5);
+			
 		}glEnd();
 
 		glBegin(GL_LINE_STRIP); {
@@ -1595,8 +1432,7 @@ void display() {
 			glVertex3f(-83, 1, 5.5);
 			glVertex3f(-83, 37, 5.5);
 
-			//		glVertex3f(-82.5,37,4.5);
-			//		glVertex3f(-81,37,12.5);
+			
 		}glEnd();
 
 
@@ -1736,9 +1572,7 @@ void display() {
 		glColor3f(0.3, 0.3, .3);
 		GLUquadricObj* obj = gluNewQuadric();
 
-		//		gluCylinder(obj,4,2,100,10,8);
-		//light upper
-			 //	glColor3f(1,1,.9*light);
+		
 		glTranslatef(80, -15, 5);
 		glRotatef(90, 0, 1, 0);
 
@@ -1752,10 +1586,7 @@ void display() {
 
 		gluCylinder(obj, 1.5, 1.5, 6.5, 20, 8);
 
-		/*
-				glTranslatef(0,0,-20);
-				glutSolidSphere(1,50,20);
-		*/
+		
 	}glPopMatrix();
 
 
@@ -1771,8 +1602,7 @@ void display() {
 
 		gluCylinder(obj, 3.8, 3.8, 1.5, 50, 10);
 
-		//		glTranslatef(100,100,100);
-		//		glutSolidSphere(4,5,20);
+		
 
 
 		glTranslatef(0, 55, 0);
@@ -2023,21 +1853,7 @@ void display() {
 
 		}glEnd();
 
-		/*
-
-			glBegin(GL_QUAD_STRIP);{
-				glVertex3f(-82.5,-37,4.5);
-				glVertex3f(-81,-37,12.5);
-
-				glVertex3f(-82.5,0,4.5);
-				glVertex3f(-82,0,10);
-
-				glVertex3f(-82.5,37,4.5);
-				glVertex3f(-81,37,12.5);
-			}glEnd();
-
-
-		*/
+		
 
 	}glPopMatrix();
 
@@ -2151,10 +1967,7 @@ void display() {
 	}glPopMatrix();
 
 
-	// for two types of Rotated RIM 
-
-
-	//for 90 rotation ------------
+	
 
 	if (rotateX % 2 == 0) {
 
@@ -2522,9 +2335,7 @@ void display() {
 		//for 45 rotation ----------------
 
 		glPushMatrix(); {
-			//	glTranslatef(-22.5+moveX,0+moveY,-41);
-			//	glRotatef(360+45,0,1,0);
-			//for wheel rim left 1st
+			
 
 			glPushMatrix(); {
 
